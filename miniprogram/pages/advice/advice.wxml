@@ -1,0 +1,100 @@
+<!--pages/advice/advice.wxml-->
+<view class="top_bg">
+  <view class="welcome">尊敬的用户：感谢您对本小程序的厚爱与支持，有您的关怀，本小程序一定会更好！我们真诚希望聆听到您的声音，鞭策我们更加奋勇向前！</view>
+</view>
+
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="grade cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{form_kind}}"  bindtap="tabSelect" data-id="{{index}}" data-TabCur="{{index}}">
+      {{item.name}}
+    </view>
+  </view>
+</scroll-view>
+
+<!-- <view class="">建议编号：{{no4}}</view> -->
+<swiper class="swiper" duration="200" bindchange="swiperChange" current="{{TabCur}}">
+  <swiper-item>
+    <view class="tips">我们对线路准确度非常重视，如您发现我们所展示的线路信息有误（各类错误均可反馈），恳请您及时反馈。</view>
+    <view class="bd_card">
+     <form class="card" bindsubmit="formSubmit" bindreset="formReset">
+        <view class="hang">
+          <view class="biaoti" style="font-weight:700">线路所属地区：</view>
+            <picker bindchange="bindPickerChange" value="{{array[index]}}" range="{{array}}" header-text="请选择线路所属地区" name='county'>
+            <view class="picker">{{array[index]}}</view>
+           </picker>
+        </view>
+
+        <view class="hang">
+          <view class="biaoti" style="font-weight:700">错误线路：</view>
+          <view class="srk">
+             <input placeholder="请输入线路号（如101、K1）" class="srk1" type="text"  name='line_number' placeholder-class="placeholderStyle" value="{{line_number}}"/>
+           </view>
+        </view>
+
+        <view style="display: flex;margin-top:10px">
+          <view class="biaoti" style="font-weight:700">具体错误：</view>
+          <view style="background-color:#e4e4e4;min-height:50px;margin-left: 5px;width: 70%;background-color: #e4e4e4;font-size: 13px;border-radius: 10px;">
+            <textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入该线路所存在的错误……"  class="text_area" maxlength="-1" placeholder-class="placeholderStyle" name='line_advice' value="{{line_advice}}"></textarea>
+          </view>
+        </view>
+        <!-- <button bindtap="upImg" style="margin-top:15px">上传线路图片</button> -->
+        <view class="anniu" style="display:flex;">
+          <button form-type="reset" class="cz_anniu" size="mini"><view class="bu_text">重置</view></button>
+          <button form-type="submit" class="tj_anniu" size="mini"><view class="bu_text">提交</view></button>
+        </view>
+      </form>
+    </view>
+  </swiper-item>
+
+  <swiper-item>
+    <view class="tips">如果您觉得我们的小程序在逻辑、布局或UI方面可优化，或者您希望我们新增一些功能，欢迎您提交相关建议给我们。</view>
+    <view class="bd_card">
+      <form class="card" bindsubmit='program_formsubmit' bindreset="program_formreset">
+        <view style="margin-top:10px">
+          <view class="biaoti" style="font-weight:700">问题类型：</view>
+        </view>
+        <view class="hang">
+          <view style="display:flex">
+            <radio-group bindchange="radioChange" style="display:flex">
+              <label wx:for="{{problem_list}}" wx:key="{{item.value}}" style="display: flex;justify-content: center;align-items: center;">
+                <view style="display:flex;margin-right:5px">
+                  <radio value="{{item.name}}" name='problem_kind' />
+                  <!-- <radio value="{{item.value}}" checked="true"/> checked="true" -->
+                </view>
+                <view style="margin-right:10px">{{item.name}}</view>
+              </label>
+            </radio-group>
+          </view>
+        </view>
+        <view style="display: flex;margin-top:10px">
+          <view class="biaoti" style="font-weight:700">反馈：</view>
+          <view style="background-color:#e4e4e4;min-height:50px;margin-left: 5px;width: 70%;background-color: #e4e4e4;font-size: 13px;border-radius: 10px;">
+            <textarea  auto-height placeholder="请填写您发现的错误或者想法……" class="text_area" maxlength="-1" placeholder-class="placeholderStyle" name='problem_advice' value="{{problem_advice}}"></textarea>
+          </view>
+        </view>
+        <view class="anniu" style="display:flex;">
+          <button form-type="reset" class="cz_anniu" size="mini"><view class="bu_text">重置</view></button>
+          <button form-type="submit" class="tj_anniu" size="mini"><view class="bu_text">提交</view></button>
+        </view>
+      </form>
+    </view>
+  </swiper-item>
+
+  <swiper-item>
+    <view class="tips">如果您有其他方面的问题，也欢迎您提交给我们，不过有关投诉司机不规范服务、物品遗失或被窃等我们无法帮助您的问题，请勿在此表单提交，我们建议您及时与相对应的公交运营公司或行政执法部门取得联系，或许他们能为解决您的问题。</view>
+    <view class="bd_card">
+      <form class="card" bindsubmit="other_formsubmit" bindreset="other_formreset">
+        <view style="display: flex;margin-top:10px">
+          <view class="biaoti" style="font-weight:700">建议：</view>
+          <view style="background-color:#e4e4e4;min-height:50px;margin-left: 5px;width: 70%;background-color: #e4e4e4;font-size: 13px;border-radius: 10px;">
+            <textarea auto-height placeholder="请输入您的建议……" class="text_area" maxlength="-1" placeholder-class="placeholderStyle" value="{{other_advice}}" name='other_advice'></textarea>
+          </view>
+        </view>
+        <view class="anniu" style="display:flex;">
+          <button class="cz_anniu" form-type="reset" size="mini"><view class="bu_text">重置</view></button>
+          <button class="tj_anniu" form-type="submit" size="mini"><view class="bu_text">提交</view></button>
+        </view>
+      </form>
+    </view>
+  </swiper-item>
+</swiper>

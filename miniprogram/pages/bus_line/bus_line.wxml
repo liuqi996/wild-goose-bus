@@ -1,0 +1,136 @@
+<!--pages/bus_line/bus_line.wxml-->
+<view wx:for="{{lists}}">
+  <view class="white_box">
+    <view class="line_title"><text class="number">{{item.line}}</text>路</view>
+    <view class="qzd">
+      <view class="start">{{item.start}}</view>
+      <image src="../../images/sx.png" style="width:20px;height:30px"></image>
+      <view class="start">{{item.terminal}}</view>
+    </view>
+  </view>
+  <view class="ydkl">
+  <!-- <image src="../../images/dkzdkz.png" mode="widthFix" style="margin-top:10px;width:100%;border-radius:10px"></image> -->
+  <image src="../../images/dkzdkz.png" mode="widthFix" style="width:100%;border-radius:10px"></image>
+</view>
+  <view class="white_box">
+    <view class="time">
+      <view class="left">
+        <view class="yysj">{{item.summer_time}}</view>
+        <view class="">夏季运营时间</view>
+      </view>
+      <view class="right">
+        <view class="yysj">{{item.winter_time}}</view>
+        <view class="">冬季运营时间</view>
+      </view>
+    </view>
+  </view>
+  <view class="white_box">
+    <view class="zf">
+      <view class="price">{{item.price}}</view>
+      <view class="pay_way">
+        <view class="zffs1" wx:for="{{item.payfileID}}" wx:key="item">
+          <image class="zffsicon" src="{{item}}"  data-src="{{item}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="bus_type">
+      <image src="../../images/brand.png" style="width:12px;height:12px"></image>
+      <view class="bus_brand">{{item.bus_brand}}</view>
+    </view>
+  </view>
+  <!-- <view class="white_box">
+    <view class="bus_type">
+      <image src="../../images/brand.png" style="width:12px;height:12px"></image>
+      <view class="bus_brand">{{item.bus_brand}}</view>
+    </view>
+  </view> -->
+  <view class="white_box">
+    <view>{{item.discount}}</view>
+  </view>
+  <view class="white_box">
+    <view class="tel">
+      <view class="tel_num">服务/投诉热线：<text selectable="true">{{item.service_tel}}</text></view>
+      <image src="../../images/tel.png" style="width:26px;height:26px;padding-left:10px" bindtap="tel" data-tel="{{item.service_tel}}"></image>
+    </view>
+  </view>
+  <!-- <view class="white_box">
+    <view class="">线路荣誉：{{item.honor}}</view>
+    <view class="">运营单位：{{item.company}}</view>
+    <view class="">运营时间：夏：{{item.summer_time}}/冬：{{item.winter_time}}</view>
+    <view class="">起终点站：{{item.start}}-{{item.terminal}}</view>
+    <view class="">线路票价：{{item.price}}</view>
+    <view class="">支付方式：{{item.pay_way}}</view> -->
+    <!-- <scroll-view scroll-x="true">
+      <view class="stop">
+        <view class="stop_item" wx:for="{{item.stop}}" wx:for-index="idx">
+          <view wx:if="{{idx==0}}">
+            <view style="display:flex">
+              <view class="dot_first"></view>
+              <view class="toward"></view>
+            </view>
+            <view class="first_station">{{item}}</view>
+          </view>
+          <view wx:elif="{{idx==lists[0].stop.length-1}}">
+            <view style="display:flex">
+              <view class="toward"></view>
+              <view class="dot_last"></view>
+            </view>
+            <view class="last_station">{{item}}</view>
+          </view>
+          <view wx:else>
+            <view style="display:flex" >
+              <view class="toward"></view>
+              <view class="dot"></view>
+              <view class="toward"></view>
+            </view>
+            <view class="station">{{item}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view> -->
+  <!-- </view> -->
+  <scroll-view scroll-x="true">
+    <view class="stop">
+      <view class="stop_item" wx:for="{{item.stop}}" wx:for-index="idx" bindtap="goto" data-zhandian="{{item}}">
+        <view wx:if="{{idx==0}}">
+          <view style="display:flex">
+            <view class="dot_first"></view>
+            <view class="toward"></view>
+          </view>
+          <view class="first_station">{{item}}</view>
+        </view>
+        <view wx:elif="{{idx==lists[0].stop.length-1}}">
+          <view style="display:flex">
+            <view class="toward"></view>
+            <view class="dot_last"></view>
+          </view>
+          <view class="last_station">{{item}}</view>
+        </view>
+        <view wx:else>
+          <view style="display:flex" >
+            <view class="toward"></view>
+            <view class="dot"></view>
+            <view class="toward"></view>
+          </view>
+          <view class="station">{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class="menu">
+  <view class="ccm" bindtap="ccm">
+    <image src="../../images/ccm.png" mode="widthFix" class="menu_icon"></image>
+    <text>\n刷码乘车</text>
+  </view>
+  <view class="rad"></view>
+  <view class="rad1"></view>
+  <view class="zsgj" bindtap="zsgj">
+    <image src="../../images/zsgj.png" mode="widthFix" class="menu_icon"></image>
+    <text>\n查看实时位置</text>
+  </view>
+</view>
+
+<view class="menu">
+  <ad unit-id="adunit-234637c3f7877d65" class="ad"></ad>
+</view>

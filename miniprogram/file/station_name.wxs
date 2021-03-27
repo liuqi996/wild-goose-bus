@@ -1,0 +1,48 @@
+//var str = "abcdefg";
+// var str = title;
+// var title = str.substring(0,str.length-3);
+
+// module.exports = {
+//   // name:s1
+//   title:title
+// };
+
+//title:function(text){
+
+// return text.substring(0,text.length-3);
+// }
+
+// 页面引用:
+
+// <wxs src="../../de.wxs" module="de"></wxs>
+// <view>{{de.title(item.title)}}</view>
+
+//<wxs module="util" src="../../de.wxs"></wxs>
+//<view>{{util.parseStr(item.title)}}</view>
+// //de.wxs
+// var parseStr = function(str){
+//   return str.substring(0,str.length-3)
+// }
+// module.exports = {
+//   parseStr
+// };
+
+// <!-- <wxs src="../../wxs/station_name.wxs" module="show"></wxs> -->
+//       <!-- <wxs module="pa">
+//         var getEvery = function(title) {
+//           var str = title;
+//           var title = str.substring(0,str.length-3);
+//           var title = str.substring(0,str.length-3);
+//         }
+//         module.exports.getEvery = getEvery;
+//       </wxs>
+//       <view class="station_name"  bindtap="station_map" data-lat="{{item.location.lat}}" data-lng="{{item.location.lng}}" data-staname="{{item.title}}" data-all_line="{{m[('m' + (idx + 1))]}}">{{pa.getEvery(item.title)}}</view> -->
+var parseStr = function(str){
+  return str.substring(0,str.length-5)
+}
+module.exports = {
+  parseStr:parseStr
+}
+// module.exports = {
+//   parseStr
+// };

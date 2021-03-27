@@ -1,0 +1,33 @@
+/* pages/smart_bus/smart_bus.wxss */
+.menu{
+  margin-top: 10px;
+  display:flex;
+  flex-wrap:wrap;
+  width: 94%;
+  margin-left: 3%;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+}
+.menu_item{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 50%;
+  font-size: 13px;
+}
+.menu_item1{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 33%;
+  font-size: 13px;
+}
+.menu_img1{
+  width: 70%;
+  margin-left: 15%;
+}
+.menu_img{
+  width: 60%;
+  margin-left: 20%;
+}
+.menu_text{
+  text-align: center;
+}

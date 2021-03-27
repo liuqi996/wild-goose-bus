@@ -1,0 +1,30 @@
+<!--pages/transport_union/transport_union.wxml-->
+<view class="search">
+  <view class="search_bar">
+    <view class='list-msg'>
+  <view class='list-msg2' bindtap='bindShowMsg'>
+    <text>{{tihuoWay}}</text>
+  </view>
+  <cover-view class="select_box" wx:if="{{select}}">
+    <cover-view class="select_one" bindtap="quanhengyang" data-name="全衡阳" data-countyid="hy">全衡阳</cover-view>
+    <cover-view class="select_one" bindtap="mySelect" data-name="主城区" data-countyid="1">主城区</cover-view>
+    <cover-view class="select_one" bindtap="mySelect" data-name="城际" data-countyid="2">城际</cover-view>
+    <cover-view class="select_one" bindtap="mySelect" data-name="常宁市" data-countyid="3">常宁市</cover-view>
+    <cover-view class="select_one" bindtap="mySelect" data-name="耒阳市" data-countyid="4">耒阳市</cover-view>
+    <cover-view class="select_one" bindtap="mySelect" data-name="祁东县" data-countyid="5">祁东县</cover-view>
+    <cover-view class="select_one" bindtap="mySelect" data-name="衡山县" data-countyid="6">衡山县</cover-view>
+    <cover-view class="select_one" bindtap="mySelect" data-name="衡阳县" data-countyid="7">衡阳县</cover-view>
+    <cover-view class="select_one" bindtap="mySelect" data-name="衡东县" data-countyid="8">衡东县</cover-view>
+    <cover-view class="select_one" bindtap="mySelect" data-name="衡南县" data-countyid="9">衡南县</cover-view>
+  </cover-view>
+</view>
+    <input class="input" placeholder="请输入公交线路" value="{{searchvalue}}" bindinput="search"></input>
+    <image class="icon" src="../../images/search.png" bindtap="search"></image>
+  </view>
+</view>
+
+<view class="result">
+  <view class="item" wx:for="{{list}}">
+    <view>{{item.countylineid}}</view>
+  </view>
+</view>

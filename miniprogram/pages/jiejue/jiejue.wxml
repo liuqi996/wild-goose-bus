@@ -1,0 +1,29 @@
+<!--pages/jiejue/jiejue.wxml-->
+<view class="page">
+  <view class="paper_box">
+    <view class="programe_name">雁城巴士助手</view>
+    <view class="paper_out">
+      <view class="out_shadow"></view>
+    </view>
+  </view>
+  <view class="paper">
+    <scroll-view scroll-y="true" class="scroll_paper">
+      <view class="top">亲，当您看到[404 error]提示时请不要着急，这只是因为小程序无法获取您的位置信息而无法搜索[附近公交站点]信息所导致。其实，“附近站点”模块显示[404 error]并不会影响您使用小程序的其他功能，您可以不管该提示也可以按照下列方法解决该问题。</view>
+      <view class="line"></view>
+      <view class="title">如果您觉得下列步骤繁琐，您完全可以忽略首页的[404]提示，以免影响您的使用体验。对于手机定位处于开启状态，且刚刚进入本小程序选了“是”的用户，不会出现404的提示。</view>
+      <view class="line"></view>
+      <view class="title">首页显示的“附近站点”模块显示[404 error]的原因:</view>
+      <view class="reason">小程序无法获取您的位置</view>
+      <view class="title">解决方法：</view>
+      <view class="reason">
+        <text>1.检查手机的定位服务是否打开；
+          2.如果手机定位已打开且已经允许微信获取您的位置权限，请确认自己是否允许本小程序获取您的位置信息；
+          3.确认以上两项设置都没问题后，回到首页点击[重新加载附近站点信息]即可获取附近站点信息。
+        </text>
+      </view>
+      <view class="anniu" bindtap="open_setting">
+        <view class="bu_t">检查小程序位置设置</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

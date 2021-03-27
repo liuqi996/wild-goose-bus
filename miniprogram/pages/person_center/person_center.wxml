@@ -1,0 +1,72 @@
+<!--pages/person_center/person_center.wxml-->
+<view class="bar" style="height:{{statusNavBarHeight+3}}px;width:100%;background-color:#fff">
+  <view class="navigation {{jiandi==1 ? 'active' : ''}}" style="padding-top:{{statusBarHeight}}px;width:100%;height:{{navBarHeight+3}}px;background-color:#fff;line-height:{{navBarHeight+3}}px;">
+  </view>
+</view>
+<view class="ziliao">
+<view class="panduan" wx:if='{{isShow}}'>
+  <view wx:if='{{canIuse}}' class="login">
+    <button class="button" open-type="getUserInfo" bindgetuserinfo='getUserInfo' hover-class="none">
+      <image class="nullavatarUrl1" src="/images/touxiang.png"></image>
+    </button>
+    <view class="login_button"><button class="newbutton" open-type="getUserInfo" bindgetuserinfo='getUserInfo' hover-class="none">
+      <view class="yjdl">一键登录</view></button></view>
+  </view>
+  <view wx:else>请升级微信版本</view>
+</view>
+<view wx:else>
+<view class='userinfo'>
+  <view class="avatarUrl"><image class="touxiang" src='{{userInfo.avatarUrl}}'></image></view>
+  <view class='nickName'><text>{{userInfo.nickName}}</text><text class="mark">（用户）\n</text><view class="weixin"><text class="cuIcon-weixin lg text-green"></text><text class="wxlogin">微信登录</text></view><view class="welcome">{{userInfo.nickName}}，欢迎使用雁城巴士助手！</view></view>
+</view>
+<view class="sc">一尊广陵酒，十载衡阳心。</view>
+</view>
+</view>
+
+<view class="menu">
+  <view class="title">便捷功能</view>
+  <view class="menu_list">
+    <view class="menu_item" wx:for="{{menu_list}}">
+    <navigator url="{{item.url}}" hover-class="none">
+      <image src="{{item.img}}" mode="widthFix" class="img"></image>
+      <view class="menu_name">
+        {{item.name}}
+      </view>
+    </navigator>
+    </view>
+  </view>
+
+  <view class="menu_list">
+    <view class="menu_item2">
+      <view>
+        <navigator url="../../pages/advice/advice" hover-class="none">
+        <image src="../../images/advice.png" mode="widthFix" class="img"><button style="width:100%"></button></image>
+        <view class="menu_name">
+          意见建议
+        </view>
+      </navigator>
+      </view>
+    </view>
+
+    <view class="menu_item1">
+      <view>
+        <image src="../../images/contact.png" mode="widthFix" class="img"><button style="width:100%"></button></image>
+        <view class="menu_name">
+          联系客服
+        </view>
+      </view>
+      <button open-type="contact" class="z_bu" hover-class="none"></button>
+    </view>
+
+    <view class="menu_item2">
+      <view>
+        <navigator url="../../pages/about_us/about_us" hover-class="none">
+        <image src="../../images/about_us.png" mode="widthFix" class="img"><button style="width:100%"></button></image>
+        <view class="menu_name">
+          关于我们
+        </view>
+      </navigator>
+      </view>
+    </view>
+  </view>
+</view>

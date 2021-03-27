@@ -1,0 +1,182 @@
+<!--pages/tongzhan/tongzhan.wxml-->
+<view class="stst">
+<view class="staname" data-zhandian="{{item}}" data-date="{{i.date}}" bindtap="chwl" ><image class="staicon" src="/images/kk-1.png"></image>
+<view class="sta">{{zhandian}}</view>
+<image class="s1" src="/images/NIKE.png" ></image>
+</view>
+<view class="fengeline"></view>
+<view class="listline">
+<view class="listline1" wx:for="{{lists}}" wx:for-item='i'  wx:key="lists" data-img='{{i.img}}' data-line='{{i.line}}' bindtap="goto">
+    <view selectable="true" class="topwenzi" data-line='{{item.line}}'>
+      <view class="linelist"><text class="linetext" selectable="true" >{{i.line}}</text></view>
+    </view>
+</view>
+</view>
+</view>
+
+<view class="stst">
+<view class="staname" data-zhandian="{{item}}" data-date="{{i.date}}" wx:for-item='i'  wx:key="chwllists">
+<view class="sta">吃喝玩乐</view>
+</view>
+<view class="fengeline"></view>
+<view class="listlife">
+<!--<scroll-view class="list1" scroll-x>-->
+<view class="listline2" wx:for="{{chwllists}}" wx:for-item='i'  wx:key="chwllists"  data-line='{{i.line}}'>
+   <view class="eat">
+    <image class="icon" src="{{i.chifileID}}" data-src="{{i.chifileID}}"></image>
+      <view class="eatitem" wx:for="{{i.eat}}"> <!--wx:key="zzzz">--><!--显示从云数据库zhandian数组字段获取到的每个站台的名称-->
+            <!--<view class="linelist"  data-chihewanle="{{item}}" data-date="{{i.date}}">-->
+      <text class="eatitem1">{{item}}</text>
+            <!--</view>-->
+      </view>
+    </view>
+    
+    <view class="eat">
+      <image class="icon" src="{{i.hefileID}}" data-src="{{i.hefileID}}"></image>
+        <view class="eatitem" wx:for="{{i.he}}"> <!--wx:key="zzzz">--><!--显示从云数据库zhandian数组字段获取到的每个站台的名称-->
+            <!--<view class="linelist"  data-chihewanle="{{item}}" data-date="{{i.date}}">-->
+          <text class="eatitem1">{{item}}</text>
+            <!--</view>-->
+      </view>
+    </view>
+    <view class="eat">
+      <image class="icon" src="{{i.wanfileID}}" data-src="{{i.wanfileID}}"></image>
+        <view class="eatitem" wx:for="{{i.wan}}"> <!--wx:key="zzzz">--><!--显示从云数据库zhandian数组字段获取到的每个站台的名称-->
+            <!--<view class="linelist"  data-chihewanle="{{item}}" data-date="{{i.date}}">-->
+          <text class="eatitem1">{{item}}</text>
+            <!--</view>-->
+      </view>
+    </view>
+    <view class="eat">
+      <image class="icon" src="{{i.buyfileID}}" data-src="{{i.buyfileID}}"></image>
+        <view class="eatitem" wx:for="{{i.buy}}"> <!--wx:key="zzzz">--><!--显示从云数据库zhandian数组字段获取到的每个站台的名称-->
+            <!--<view class="linelist"  data-chihewanle="{{item}}" data-date="{{i.date}}">-->
+          <text class="eatitem1">{{item}}</text>
+            <!--</view>-->
+      </view>
+    </view>
+    <view class="eat">
+      <image class="icon" src="{{i.liningfileID}}" data-src="{{i.liningfileID}}"></image>
+        <view class="eatitem" wx:for="{{i.lining}}"> <!--wx:key="zzzz">--><!--显示从云数据库zhandian数组字段获取到的每个站台的名称-->
+            <!--<view class="linelist"  data-chihewanle="{{item}}" data-date="{{i.date}}">-->
+          <text class="eatitem1">{{item}}</text>
+            <!--</view>-->
+      </view>
+    </view>
+    <view class="eat">
+      <image class="icon" src="{{i.nikefileID}}" data-src="{{i.nikefileID}}"></image>
+        <view class="eatitem" wx:for="{{i.nike}}"> <!--wx:key="zzzz">--><!--显示从云数据库zhandian数组字段获取到的每个站台的名称-->
+            <!--<view class="linelist"  data-chihewanle="{{item}}" data-date="{{i.date}}">-->
+          <text class="eatitem1">{{item}}</text>
+            <!--</view>-->
+      </view>
+    </view>
+    <view class="exercise"> 
+      <view class="fs1" wx:for="{{i.runicon}}" wx:key="item">
+        <image class="fsicon" src="{{item}}"  data-src="{{item}}"></image>
+      </view>
+    </view>
+    <view selectable="true" class="topwenzi" data-chihewanle='{{item.chihewanle}}'>
+      <view class="eat"  data-chihewanle='{{item.chihewanle}}'>
+      <image class="icon" src="{{i.chifileID}}" data-src="{{i.chifileID}}"></image>
+      <view class="linelist"><text class="linetext" selectable="true" >{{i.chihewanle}}</text></view>
+      </view>
+    </view>
+</view>
+<!--</scroll-view>-->
+</view>
+</view>
+
+
+<!--<view class="stst">-->
+<!--<view class="staname">
+<view class="sta">广告</view>
+</view>
+<view class="fengeline"></view>-->
+<!--<view class="listlinead">
+<ad unit-id="adunit-234637c3f7877d65"></ad>
+</view>
+</view>-->
+
+
+
+<view class="stst1">
+  <view class="gg">
+<ad unit-id="adunit-234637c3f7877d65"></ad>
+</view>
+</view>
+
+<view class="search_kuangjia" scroll-y="true"> 
+  <view class="search_items" wx:for="{{lists}}" wx:for-item='i'  wx:key="lists" data-img='{{i.img}}' data-line='{{i.line}}' bindtap="goto">
+    <view selectable="true" class="wenzi" data-line='{{item.line}}'>
+      <view class="line"><text selectable="true" >{{i.line}}路</text></view>
+      <view class="fengeline"></view>
+      <view  hidden="{{item.isShow}}" class="li-wrap">
+      <view class="company"><text selectable="true" >运营单位：{{i.company}}</text></view>
+      <view class="time"><text selectable="true" >运营时间：{{i.time}}</text></view>
+      <view class="time"><text selectable="true" >{{i.chexing}}</text></view>
+      <view class="price"><text selectable="true" >票价：￥{{i.price}}</text></view>
+      <view class="zhandian">
+        <scroll-view class="station" scroll-x>
+         <block wx:for="{{i.zhandian}}" wx:key="zzzz">
+           <view class="zhandian1" bindtap="goto1" data-zhandian="{{item}}" data-date="{{i.date}}">
+             <text class="zhandian2">●{{item}}\n</text>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+      <view class="fx">{{i.fxtrue}}</view>
+      <view class="zhandian">
+       <scroll-view class="station" scroll-x>
+          <block wx:for="{{i.fxzhandian}}" wx:key="zzzz"><!--显示从云数据库zhandian数组字段获取到的每个站台的名称-->
+            <view class="zhandian1"  data-zhandian="{{item}}" data-date="{{i.date}}">
+              <text class="zhandian2">●{{item}}\n</text>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--<view class="line" bind:tap='changeToggle' data-index="{{index}}">{{item.line}}
+
+bind:tap='changeToggle' data-index="{{index}}"
+      <image class='entry' style="transform:rotate({{isShow?'90deg':'-90deg'}});" src="{{entry}}"></image>
+</view>
+        <view class="fx">反向站点</view>    enable-flex="true"-->
+      <!---
+      <view class="zhandian">
+      <scroll-view class="station" scroll-x="true" >
+          <block wx:for="{{i.fxzhandian}}" wx:key="item">
+            <view class="zhandian1" bindtap="goto">
+              <text class="zhandian2" data-text="{{item}}">●{{item}}\n</text>
+            </view>
+          </block>
+      </scroll-view>
+      </view>
+<view class="stop"><text selectable="true" >途径站点：{{i.stop}}</text></view>-->
+      <!--<view class="fanxiang"><text selectable="true" >{{i.fanxiang}}</text></view>-->
+      <!--<text class="content">{{goodList[index].content}}</text>-->
+      <!--<block wx:for="{{i.fileIds}}" wx:key="item">
+  <image class="fjt" src="{{item}}" mode="widthFix" data-src="{{item}}" bindtap='Img'></image>
+</block>
+      <view class="xiangqing">查看详情>></view>--<!-bindtap="todetail"   
+      <view class="divLine"></view>
+
+
+        <scroll-view class="station" scroll-x>
+              <block wx:for="{{i.zhandian}}" wx:key="item">
+                <view class="zhandian1" bindtap="goto1">
+                  <text class="zhandian2" data-text="{{item}}">●{{item}}\n</text>
+                </view>
+             </block>
+             </scroll-view>   
+             点击的是{{item}}，现在需要将该值传入tongzhan页面并从数据库中搜索传过来的字，显示哪些线路包含该item。<block wx:for="{{i.zhandian}}" wx:key="zzzz">显示从云数据库zhandian数组字段获取到的每个站台的名称
+            <view class="zhandian1" bindtap="goto">
+              <text class="zhandian2" data-text="{{item}}">●{{item}}\n</text>
+            </view>
+          </block>
+
+-->

@@ -1,0 +1,92 @@
+/* pages/countryside_bus/countryside_bus.wxss */
+page{
+  background-color: #00a55b;
+}
+.top{
+  font-family:"pmzd" !important;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 5px;
+}
+.li-wrap .line{
+  border-bottom: 1rpx solid #eee;
+}
+.entry{
+  width:40rpx;
+  height:40rpx;
+  margin-left: 20rpx;
+}
+.a{
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow:2px 2px 2px 2px #00a640;
+}
+.wenzi{
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.line{
+  font-size: 15px;
+  font-weight: bold;
+  color: #ff0073;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.station{
+  margin-top: 5px;
+  font-size: 30rpx;
+  color:#006627;
+  display: flex;
+  justify-content: center;
+}
+.stop{
+  font-size:31rpx;
+}
+.price{
+  font-size: 30rpx;
+}
+
+.ad{
+  margin-top: 10px;
+  position: relative;
+  background-color: #F0F8FF;
+  box-shadow:2px 2px 2px 2px #F5f5f5;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 1%;
+}
+
+.ad1{
+  position: relative;
+  margin: 0 auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius: 5%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+@font-face {
+  font-family: 'pmzd';
+  font-display: swap;
+  src: url('//at.alicdn.com/t/webfont_czqu4usy1.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/webfont_czqu4usy1.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/webfont_czqu4usy1.woff2') format('woff2'),
+  url('//at.alicdn.com/t/webfont_czqu4usy1.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/webfont_czqu4usy1.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/webfont_czqu4usy1.svg#庞门正道标题体2') format('svg'); /* iOS 4.1- */
+}

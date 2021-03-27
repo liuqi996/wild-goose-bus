@@ -1,0 +1,78 @@
+<!--pages/near_station/near_station.wxml-->
+<view class="bar" wx:if="{{shareshow}}" style="height:{{statusNavBarHeight+3}}px;width:100%;background-color:#00a99d">
+  <view class="navigation {{jiandi==1 ? 'active' : ''}}" style="padding-top:{{statusBarHeight}}px;width:100%;height:{{navBarHeight+3}}px;background-color:#00a99d;line-height:{{navBarHeight+3}}px;">
+    <view style="letter-spacing:1px;line-height:{{navBarHeight+3}}px;padding-left:11px;color:#fff;" class="tianqi">欢迎使用[雁城巴士助手]！</view>
+  </view>
+</view>
+<view>
+  <image src="../../images/jt8888.png" mode="widthFix" class="top"></image>
+</view>
+<view class="s_box">
+  <view class="search_bar" bindtap="nav">
+    <view class="srk">搜索衡阳公交线路、站点</view>
+    <image class="icon" src="../../images/search.png"></image>
+  </view>
+  <text style="font-size:10px;padding-left: 10px;">支持衡阳全域公交线路查询（5区5县2县级市）</text>
+</view>
+
+<view class="menu">
+  <ad unit-id="adunit-234637c3f7877d65" class="ad"></ad>
+</view>
+
+<view class="near_station" bindtouchstart="handletouchstart" bindtouchmove="handletouchmove">
+  <view class="near_title">附近站点 | <text class="weather">[衡阳 {{now.cond_txt}} {{now.tmp}}℃]</text>
+  </view>
+  <view wx:if="{{sousuo_status==='false'}}">
+    <image src="../../images/404error.png" mode="widthFix" class="error_png"></image>
+    <view class="fail_tips">原因：未打开手机定位或未允许（授权）“雁城巴士助手”获取您的位置信息，故无法搜索附近的公交站点信息。</view>
+    <view class="jiejue">
+      <view class="resolve"><navigator url="../../pages/jiejue/jiejue" hover-class="none">查看解决方法</navigator></view>
+      <view class="resolve" bindtap="again">重新定位/搜索</view>
+    </view>
+  </view>
+  <view wx:elif="{{shuaxin==='true'}}" class="shuaxin">
+    <view class="shuaxin">正在重新加载数据中</view>
+  </view>
+  <view wx:else>
+  <view class="nearest_station">
+    <view class="station_message" bindtap="station_map" data-lat="{{nearbusstation[0].location.lat}}" data-lng="{{nearbusstation[0].location.lng}}" data-staname="{{nearbusstation[0].title}}" data-all_line="{{m0}}">
+      <image class="station_icon" src="/images/station.png"></image>
+      <wxs module="util" src="../../file/station_name.wxs"></wxs>
+      <view class="station_name">{{util.parseStr(nearbusstation[0].title)}}</view>
+      <text class="station_distance">1个站台 | {{nearbusstation[0]._distance}}米</text>
+      <image src="../../images/url.png" style="width:15px;height:15px" class="url_icon"></image>
+    </view>
+    <view class="station_line"><view wx:for="{{m0}}" class="lineitem" bindtap="xianlutu" data-line="{{item}}">
+      <view class="line_hang">
+        <image src="../../images/line.png" style="width:10px;height:10px"></image>
+        {{item}}
+      </view>
+      </view>
+    </view>
+  </view>
+  <view wx:for="{{station_list}}" wx:for-index="idx" class="other_station" wx:for-c="index+1">
+    <view class="grey_b"></view>
+    <view class="station_message" bindtap="station_map" data-lat="{{item.location.lat}}" data-lng="{{item.location.lng}}" data-staname="{{item.title}}" data-all_line="{{m[('m' + (idx + 1))]}}">
+      <image class="station_icon" src="/images/station.png"></image>
+      <wxs module="util" src="../../file/station_name.wxs"></wxs>
+      <view class="station_name">{{util.parseStr(item.title)}}</view>
+      <text class="station_distance">1个站台 | {{item._distance}}米</text>
+      <image src="../../images/url.png" style="width:15px;height:15px" class="url_icon"></image>
+    </view>
+    <view wx:if="{{idx==0}}">
+      <view class="station_line"><view wx:for="{{m1}}" class="lineitem" bindtap="xianlutu"  data-line="{{item}}">{{item}}</view></view>
+    </view>
+    <view wx:elif="{{idx==1}}">
+      <view class="station_line"><view wx:for="{{m2}}" class="lineitem" bindtap="xianlutu"  data-line="{{item}}">{{item}}</view></view>
+    </view>
+    <view wx:elif="{{idx==2}}">
+      <view class="station_line"><view wx:for="{{m3}}" class="lineitem" bindtap="xianlutu"  data-line="{{item}}">{{item}}</view></view>
+    </view>
+    <view wx:else="{{idx==3}}">
+      <view class="station_line"><view wx:for="{{m4}}" class="lineitem" bindtap="xianlutu" data-line="{{item}}">{{item}}</view></view>
+    </view>
+  </view>
+</view>
+  <view class="bai_di"></view>
+</view>
+<image src='../../images/love_hy.png' class='png2' mode="widthFix"></image>

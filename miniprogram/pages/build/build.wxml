@@ -1,0 +1,2 @@
+<!--pages/build/build.wxml-->
+<web-view src="{{art.url}}"></web-view>

@@ -1,0 +1,30 @@
+<!--pages/about_us/about_us.wxml-->
+<view class="top_bg"></view>
+<view class="card">
+  <view class="mini_title">雁城巴士助手</view>
+  <view class="line"></view>
+  <view class="intro">雁城巴士助手小程序是由衡阳籍在校学生个人根据站台线路图及相关网络信息编写一款方便市民朋友查询衡阳公交线路等信息的便民小程序。</view>
+</view>
+<view class="menu_intro">
+  <view class="menu_title">功能介绍</view>
+  <view class="item">
+    <view class="title">
+      <view class="rad" style="background-color:#0CB98E"></view>更新及时
+    </view>
+    <view class="detail">公交站台实地采集最新数据，相对于部分地图软件更准确及时。</view>
+  </view>
+  <view class="item">
+    <view class="title">
+      <view class="rad" style="background-color:#FE6031"></view>数据详细
+    </view>
+    <view class="detail">衡阳地区唯一一款采集公交线路支持的支付方式、车型等具体信息的应用/小程序。</view>
+  </view>
+  <view class="item">
+    <view class="title">
+      <view class="rad" style="background-color:#FFCD42"></view>功能丰富
+    </view>
+    <view class="detail">衡阳公交充值点、交通联合线路查询、城乡公交线路等功能一应俱全，为您带来更贴心的使用体验。</view>
+  </view>
+</view>
+
+<view class="xcy">热爱家乡，正面宣传家乡，为家乡发展助力！家荣我荣，家耻我耻！</view>

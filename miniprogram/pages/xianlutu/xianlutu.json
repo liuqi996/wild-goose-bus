@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "线路详情",
+  "navigationBarBackgroundColor": "#3DBA82",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh":true
+}

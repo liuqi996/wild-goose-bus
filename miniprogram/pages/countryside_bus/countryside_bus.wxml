@@ -1,0 +1,14 @@
+<!--pages/countryside_bus/countryside_bus.wxml-->
+<view class="top">助力乡村振兴</view>
+<view class="a" wx:for="{{ne}}">
+  <view class="wenzi">
+    <view class="line" bind:tap='changeToggle' data-index="{{index}}">{{item.line}}
+      <image class='entry' style="transform:rotate({{ne[index].isShow?'-90deg':'90deg'}});" src="{{entry}}"></image>
+    </view>
+    <view  hidden="{{item.isShow}}" class="li-wrap">
+      <view class="station" >起终点站：{{item.station}}</view>
+      <view class="stop" >途径站点：{{item.stop}}</view>
+      <view class="price" >票价：{{item.price}}</view>
+    </view>
+  </view>
+</view>

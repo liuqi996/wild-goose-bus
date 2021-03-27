@@ -1,0 +1,29 @@
+<!--pages/smart_bus/smart_bus.wxml-->
+<!-- <view class="menu">
+  <view wx:for="{{menulist}}" class="menu_item">
+    <navigator hover-class="none" url="{{item.url}}">
+      <image src="{{item.img}}" mode="widthFix" class="menu_img"></image>
+      <view class="menu_text">{{item.name}}</view>
+    </navigator>
+  </view>
+</view> -->
+
+<view class="menu" style="padding-top:10px;padding-bottom:7px">
+  <view class="menu_left" style="width:45%;margin-left:3.33%;">
+    <image src="../../images/near_recharge.png" mode="widthFix" style="width:100%" bindtap="recharge"></image>
+  </view>
+  <view class="menu_left" style="width:45%;margin-left:3.33%;">
+    <image src="../../images/union_line.png" mode="widthFix" style="width:100%"></image>
+  </view>
+</view>
+
+<view class="menu">
+  <view wx:for="{{menulist1}}" class="menu_item1" bindtap="{{item.bind}}">
+    <image src="{{item.img}}" mode="widthFix" class="menu_img1"></image>
+    <view class="menu_text">{{item.name}}</view>
+  </view>
+</view>
+
+<view class="menu">
+  <ad unit-id="adunit-8fe183fa884121c0"></ad>
+</view>

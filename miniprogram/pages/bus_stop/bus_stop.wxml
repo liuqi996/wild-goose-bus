@@ -1,0 +1,55 @@
+<!--pages/bus_stop/bus_stop.wxml-->
+<map class="map" id="map" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" scale="{{seting.scale}}" setting="{{setting}}" show-compass="true" enable-3D="true" show-location="true"></map>
+<ad unit-id="adunit-234637c3f7877d65" class="ad"></ad>
+<view class="huidi">
+<view class="message">
+<view class="line">
+  <view class="tdt"></view>
+  <wxs module="util" src="../../file/station_name.wxs"></wxs>
+  <view class="station_top">
+    <image src="../../images/station.png" class="station_icon"></image>
+    <view style="font-size:15px">{{util.parseStr(name)}}</view>
+  </view>
+  <view class="tips">温馨提示：本页面所展示的公交线路信息是衡阳境内的，如您当前不在衡阳，请忽略下面的公交线路信息。</view>
+  <view class="all_line">
+    <view wx:for="{{arr1}}" wx:for-index="xinindex" class="xianlu">
+      <view style="margin-top:10px" class="xianluhao">{{item.line_detail}}</view>
+      <view wx:if="{{item.stop==0 || item.stop==undefine || item.stop==null || item.stop.length==0}}">
+        <view class="tips">温馨提示：请该线路信息正在加紧采集中……</view>
+      </view>
+      <view wx:else>
+      <scroll-view scroll-x="true">
+        <view class="stop">
+          <view class="stop_item" wx:for="{{item.stop}}" wx:for-index="idx" bindtap="goto" data-zhandian="{{item}}" data-xinindex="{{xinindex}}" data-idx="{{idx}}">
+            <view wx:if="{{idx==0}}">
+              <view style="display:flex">
+                <view class="dot_first"></view>
+                <view class="toward"></view>
+              </view>
+              <view class="first_station">{{item}}</view>
+            </view>
+            <view wx:elif="{{idx==arr1[xinindex].stop.length-1}}">
+              <view style="display:flex">
+                <view class="toward"></view>
+                <view class="dot_last"></view>
+              </view>
+              <view class="last_station">{{item}}</view>
+            </view>
+            <view wx:else>
+              <view style="display:flex" >
+                <view class="toward"></view>
+                <view class="dot"></view>
+                <view class="toward"></view>
+              </view>
+              <view class="station8">{{item}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="xuxian"></view>
+    </view>
+  </view>
+</view>
+</view>
+</view>

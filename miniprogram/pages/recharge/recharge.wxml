@@ -1,0 +1,16 @@
+<!--pages/recharge/recharge.wxml-->
+<map id="map" class="map" latitude="{{location.latitude}}" longitude="{{location.longitude}}" show-location="{{showPosition}}" show-compass="{{true}}" show-scale="{{true}}" markers="{{markers}}" scale="16" bindmarkertap="xianshi"></map>
+
+<view class="content">
+  <view class="cuIcon-warnfill shengming" bindtap="tips">温馨提示</view>
+  <view class="czd">
+  <view wx:for="{{markers}}" wx:for-index="idx" class="czd_item" bindtap="detail" data-id="{{item.id}}">
+    <view class="top_line">
+      <view class="title">{{idx+1}}.{{item.title}}</view>
+      <view class="meter">{{meter[idx]}}</view>
+    </view>
+    <view class="address">地址：{{item.address}}</view>
+  </view>
+  </view>
+</view>
+<!-- [{{meter[idx]}}] -->

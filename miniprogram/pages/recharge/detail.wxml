@@ -1,0 +1,21 @@
+<!--pages/recharge/detail.wxml-->
+<image src="../../images/ilovehy.png" mode="widthFix" class="bj"></image>
+
+<view class="bj1">
+  <view class="content">
+    <view class="title">{{title}}</view>
+    <view class="name">位置：{{address}}</view>
+    <map class="map" id="map" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" bindregionchange="yd" bindmarkertap="intoMap" bindcallouttap="intoMap" polyline="{{polyline}}" show-location="true" scale="14" include-points='{{polyline.points}}'>
+      <!-- <view class="sjx"></view> -->
+      <!-- <view bindtap="intoMap" class="dh">
+        <view class="dht">导航去该充值点</view>
+      </view> -->
+    </map>
+    <view class="" style="font-size:13px">距您直线距离{{jl}}</view>
+    <view class="nav">
+      <view class="left" bindtap="XCX">小程序导航</view>
+      <view class="right" bindtap="intoMap">APP导航</view>
+    </view>
+  </view>
+  <view class="back" bindtap="back">返回上页</view>
+</view>

@@ -1,0 +1,74 @@
+<!--pages/xianlutu/xianlutu.wxml-->
+ <view class="search_kuangjia" scroll-y="true"> 
+  <view class="search_items" wx:for="{{lists}}" wx:for-item='i'  wx:key="lists" data-img='{{i.img}}' data-line='{{i.line}}'>
+    <view selectable="true" class="wenzi" data-line='{{item.line}}'>
+    <view class="gjxl">
+      <image class="gjicon" src="/images/gjxl.png"></image>
+      <view class="line"><text selectable="true" >{{i.line}}路</text></view></view>
+      <view class="company"><text selectable="true" >运营单位：{{i.company}}</text></view>
+      <view class="time"><text selectable="true" >运营时间：{{i.time}}</text></view>
+      <view class="time"><text selectable="true" >{{i.chexing}}</text></view>
+      <view class="price"><text selectable="true" >票价：￥{{i.price}}</text></view>
+      <view class="price"><text selectable="true" >温馨提示：前上后下，文明乘车。请保管好自己的贵重物品，提(dī)防扒手！请勿在车厢内饮食、乱扔果皮纸屑、大声喧哗。请勿与司机闲谈！</text></view>
+      <!--<scroll-view class="station" scroll-x>
+      <view class="divLine"></view>
+      </scroll-view>-->
+      <!-- <view class="map-container plr20">
+        <map class="map" id="map" latitude="{{location.latitude}}" longitude="{{location.longitude}}" markers="{{markers}}" polyline="{{polyline}}" scale="{{scale}}" enable-zoom="{{false}}" enable-scroll="{{false}}"></map>
+      </view> -->
+      <view class="zhandian">
+       <scroll-view class="station" scroll-x>
+          <block wx:for="{{i.zhandian}}" wx:key="zzzz"><!--显示从云数据库zhandian数组字段获取到的每个站台的名称-->
+            <view class="zhandian1" bindtap="goto" data-zhandian="{{item}}" data-date="{{i.date}}">
+              <text class="zhandian2">●{{item}}\n</text>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+      <!--<view class="tishi"> ← ◀左右滑动查看▶ →</view>-->
+      <view class="fx">{{i.fxtrue}}</view>
+      <!--<view class="fx">反向站点</view>    enable-flex="true"-->
+      <!---
+      <view class="zhandian">
+      <scroll-view class="station" scroll-x="true" >
+          <block wx:for="{{i.fxzhandian}}" wx:key="item">
+            <view class="zhandian1" bindtap="goto">
+              <text class="zhandian2" data-text="{{item}}">●{{item}}\n</text>
+            </view>
+          </block>
+      </scroll-view>
+      </view>-->
+      <view class="zhandian">
+       <scroll-view class="station" scroll-x>
+          <block wx:for="{{i.fxzhandian}}" wx:key="zzzz"><!--显示从云数据库zhandian数组字段获取到的每个站台的名称-->
+            <view class="zhandian1"  data-zhandian="{{item}}" data-date="{{i.date}}">
+              
+              <text class="zhandian2">●{{item}}\n</text>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+      <!-- <view class="map-container plr20">
+        <map class="map" id="map" latitude="{{location.latitude}}" longitude="{{location.longitude}}" markers="{{markers}}" polyline="{{polyline}}" scale="14.5" enable-zoom="{{false}}" enable-scroll="{{false}}"></map>
+      </view> -->
+      <!-- <view class="update">数据更新于：{{get_update}}</view> -->
+      <view class="update">数据采集地点：{{i.get_place}}</view>
+      <view class="update"><text selectable="true" >数据采集方式：{{i.get_way}}</text></view>
+      <view class="zffs"> 支付方式：
+      <view class="zffs1" wx:for="{{i.payfileID}}" wx:key="item">
+        <image class="zffsicon" src="{{item}}"  data-src="{{item}}"></image>
+      </view>
+      </view>
+      <view wx:if="{{i.zsgj=='true'}}">
+        掌上公交
+      </view>
+      <view wx:if="{{i.ccm=='true'}}">
+        乘车码
+      </view>
+      <button open-type="share" class="share1" style="border: none;">
+        <image class="sharepng" src="/images/share.png"></image>
+      </button>
+    </view>
+  </view>
+</view>
+

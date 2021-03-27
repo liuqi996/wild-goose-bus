@@ -1,0 +1,14 @@
+<!--pages/line_search/line_search.wxml-->
+<view class="search">
+  <view class="search_bar">
+    <input class="input" placeholder="请输入您要查询的公交线路或站台名称" value="{{searchvalue}}" bindinput="sousuo" auto-focus="true"></input>
+    <image class="icon" src="../../images/search.png" bindtap="search"></image>
+  </view>
+  <scroll-view class="search_result" scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" style="max-height:800rpx">
+    <view wx:for="{{searchResultList}}" wx:key="index" class="item" data-line="{{item.line}}" bindtap="line">
+      <view class="searchResultItem-context">
+        <text wx:for="{{item.searchArray}}" wx:for-item="item2"  wx:key="index2" style="{{item2 == searchvalue?'color:#4E70C7':''}}">{{item2}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>
