@@ -41,6 +41,12 @@ Page({
       url: '../../card/pages/recharge/recharge',
     })
   },
+  
+  union_line:function(){
+    wx.navigateTo({
+      url: '../../pages/transport_union/transport_union',
+    })
+  },
 
   ccm:function(){
     wx.navigateToMiniProgram({

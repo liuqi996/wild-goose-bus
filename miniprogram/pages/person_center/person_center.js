@@ -20,7 +20,7 @@ Page({
       {
         img:"../../images/gjkczd1.png",
         name:"充值点",
-        url:"../../pages/recharge/recharge"
+        url:"../../card/pages/recharge/recharge"
       },
       {
         img:"../../images/union.png",

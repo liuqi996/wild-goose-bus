@@ -8,12 +8,21 @@
   </view>
 </view> -->
 
-<view class="menu" style="padding-top:10px;padding-bottom:7px">
+<!-- <view class="menu" style="padding-top:10px;padding-bottom:7px">
   <view class="menu_left" style="width:45%;margin-left:3.33%;">
     <image src="../../images/near_recharge.png" mode="widthFix" style="width:100%" bindtap="recharge"></image>
   </view>
   <view class="menu_left" style="width:45%;margin-left:3.33%;">
-    <image src="../../images/union_line.png" mode="widthFix" style="width:100%"></image>
+    <image src="../../images/union_line.png" mode="widthFix" style="width:100%" bindtap="union_line"></image>
+  </view>
+</view> -->
+
+<view style="display:flex;margin-top:15px">
+  <view class="menu_left" style="width:45%;margin-left:3.33%;">
+    <image src="../../images/near_recharge.png" mode="widthFix" style="width:100%" bindtap="recharge"></image>
+  </view>
+  <view class="menu_left" style="width:45%;margin-left:3.33%;">
+    <image src="../../images/union_line.png" mode="widthFix" style="width:100%" bindtap="union_line"></image>
   </view>
 </view>
 

@@ -1,4 +1,7 @@
 /* pages/smart_bus/smart_bus.wxss */
+page{
+  background-color: #fff
+}
 .menu{
   margin-top: 10px;
   display:flex;

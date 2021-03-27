@@ -364,37 +364,98 @@ Page({
       let lat2 = item.latitude;
       let lng2 = item.longitude;
       let title = item.title;
-      
       const distance_new=this.getDistance(lat1,lng1,lat2,lng2);
-      console.log(title,distance_new)
+      //console.log(title,distance_new)
       keyArr.push(distance_new)
       return keyArr
     })
-    console.log(keyArr)
+    console.log("距离数组",keyArr)
+    var newkeyArr = keyArr.flatMap(item => [{ distance:item}])
+    console.log("格式化后的距离数组",newkeyArr)
+    // var newkeyArr = keyArr.flatMap(item => [{ distance: item }])
+    // console.log(newkeyArr)
+
+    // var d = new Array()
+    // for(var i=0;i<this.data.markers.length;i++){
+    //   d.push([this.data.markers[i],newkeyArr[i]]);
+    // }
+    // console.log(d)
+    // var c = keyArr
+    // c.forEach(item => {
+    //   item.km = item
+    // })
+    // keyArr.forEach((value, index) => {
+    //   value['km'] = item
+    // })
+    // console.log(c)
+    // var d = new Array()
+    // for(var i=0;i<this.data.markers.length;i++){
+    //   d.push([this.data.markers[i],keyArr[i]]);
+    // }
+    // console.log(d)
+    // var z = [{ qq: "128km" }, { qq: "127km" }, { qq: "125km" }, { qq: "128km" }, { qq: "127km" }, { qq: "125km" }, { qq: "128km" }, { qq: "127km" }, { qq: "125km" }, { qq: "128km" }, { qq: "127km" },]
+    // var m = new Array()
+    // for (var i = 0; i < this.data.markers.length; i++) {
+    //   m.push([this.data.markers[i], z[i]]);
+    // }
+    // console.log(m)
+    // var arr3 = this.data.markers.concat(z);
+    // console.log("arr3",arr3)
+    // var k= k.zip(this.data.markers,z);
+    // console.log(k)
+    // let newObj = [];
+    // Object.assign(newObj, this.data.markers, z);
+    // console.log("newObj",newObj)
+    // z.push.apply(z, this.data.markers);
+    // console.log(z)
+    // this.data.markers.forEach(item => {
+    //   item.km == item
+    //   // if (item.km == null || item.name == '') {
+    //   //   item._disabled = false
+    //   // } else if (item.name !== null) {
+    //   //   item._disabled = true
+    //   // }
+    // })
     this.setData({
       meter:keyArr
     })
+
+    // function compare(1) {//property:根据什么属性排序
+    //   return function (a, b) {
+    //     var value1 = a[1];
+    //     var value2 = b[1];
+    //     /*
+    //     * value2 - value1; ——> 降序
+    //     * value1 - value2; ——> 升序
+    //     */
+    //     return value1 - value2;//升序排序
+    //   }
+    // }
+
+    // // 打印排序后的数组
+    // console.log(d.sort(compare('1')))
   },
 
   getDistance(lat1, lng1, lat2, lng2) {
     // let lat1=this.data.latitude;
     // let lng1=this.data.longitude;
-      //let lat2 = latitude;
-      //let lng2 = longitude;
-      var radLat1 = this.Rad(lat1);
-      var radLat2 = this.Rad(lat2);
-      var a = radLat1 - radLat2;
-      var b = this.Rad(lng1) - this.Rad(lng2);
-      var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(radLat1) * Math.cos(radLat2) * Math.pow(Math.sin(b / 2), 2)));
-      s = s * 6378.137;
-      s = Math.round(s * 10000) / 10000;
-      s = s.toFixed(1) + 'km' //保留两位小数
-      console.log('经纬度计算的距离:' + s)
-      this.setData({
-        jl: s
-      })
-      console.log(this.data.jl)
-      return s
+    //let lat2 = latitude;
+    //let lng2 = longitude;
+    var radLat1 = this.Rad(lat1);
+    var radLat2 = this.Rad(lat2);
+    var a = radLat1 - radLat2;
+    var b = this.Rad(lng1) - this.Rad(lng2);
+    var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(radLat1) * Math.cos(radLat2) * Math.pow(Math.sin(b / 2), 2)));
+    s = s * 6378.137;
+    s = Math.round(s * 10000) / 10000;
+    //s = s.toFixed(1) + 'km' //保留1位小数
+    s = s.toFixed(2) + 'km' //保留两位小数
+    //console.log('经纬度计算的距离:' + s)
+    this.setData({
+      jl: s
+    })
+    //console.log(this.data.jl)
+    return s
   },
 
   // 计算距离函数
